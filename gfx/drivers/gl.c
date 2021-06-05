@@ -4011,6 +4011,7 @@ static bool gl2_alive(void *data)
       //gl2_renderchain_restore_default_state(gl);
       hwr = video_driver_get_hw_context();
 
+      gl->shader->deinit(gl->shader_data);
       if (!gl2_shader_init(gl, gl->ctx_driver, hwr))
       {
          RARCH_ERR("[GL]: Shader initialization failed.\n");
